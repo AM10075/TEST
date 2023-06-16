@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generador de Alertas</title>
+  <style>
+    .alert-container {
+  text-align: center;
+}
+
+.alert-container button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  color: #888;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Generador de Alertas</h1>
+
+  <div class="alert-container">
+    <button onclick="showAlert('success')">Mostrar Alerta de Éxito</button>
+    <button onclick="showAlert('warning')">Mostrar Alerta de Advertencia</button>
+    <button onclick="showAlert('error')">Mostrar Alerta de Error</button>
+  </div>
+
+  <div id="alert" class="alert">
+    <span class="close" onclick="hideAlert()">&times;</span>
+    <p id="alert-message"></p>
+  </div>
+
+  <script>
+    function showAlert(type) {
+  var alertBox = document.getElementById('alert');
+  var alertMessage = document.getElementById('alert-message');
+
+  // Configura el mensaje y las clases CSS basado en el tipo de alerta
+  if (type === 'success') {
+    alertBox.classList.add('alert-success');
+    alertMessage.textContent = '¡Éxito! La operación se realizó correctamente.';
+  } else if (type === 'warning') {
+    alertBox.classList.add('alert-warning');
+    alertMessage.textContent = 'Advertencia: Se encontraron errores en la operación.';
+  } else if (type === 'error') {
+    alertBox.classList.add('alert-error');
+    alertMessage.textContent = '¡Error! Hubo un problema al procesar la solicitud.';
+  }
+
+  // Muestra la alerta
+  alertBox.style.display = 'block';
+}
+
+function hideAlert() {
+  var alertBox = document.getElementById('alert');
+  alertBox.style.display = 'none';
+
+  // Elimina las clases CSS de alerta
+  alertBox.classList.remove('alert-success');
+  alertBox.classList.remove('alert-warning');
+  alertBox.classList.remove('alert-error');
+}
+
+  </script>
+</body>
+</html>

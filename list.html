@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Productos</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .product-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-item {
+  text-align: center;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-item h2 {
+  margin-bottom: 5px;
+}
+
+.product-item p {
+  margin-bottom: 10px;
+}
+
+.product-item button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.product-item button:hover {
+  background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Listado de Productos</h1>
+
+  <!-- Cambiar color del li Seleccionado -->
+  <ul class="product-list">
+    <li class="product-item">
+      <h2>Producto 1</h2>
+      <p>Precio: $10</p>
+      <button>Seleccionar</button>
+    </li>
+    <li class="product-item">
+      <h2>Producto 2</h2>
+      <p>Precio: $20</p>
+      <button>Seleccionar</button>
+    </li>
+    <li class="product-item">
+      <h2>Producto 3</h2>
+      <p>Precio: $15</p>
+      <button>Seleccionar</button>
+    </li>
+  </ul>
+  <div class="data">
+    
+  </div>
+</body>
+</html>
